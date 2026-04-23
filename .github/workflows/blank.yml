@@ -1,0 +1,31 @@
+name : my_first_ci
+on: 
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+    ci_jobs:
+      runs-on: ubuntu-latest
+      defaults:
+            run:
+              working-directory: server
+
+
+ 
+    steps:
+        - name: Load Virtual Machine 
+        uses: actions/checkout@v4
+
+        -name: Setup Node env
+        uses: actions/setup-node@v4
+
+        -name: Install Dependency
+        run: npm install
+
+        -name : run Index File
+        run : node index.jx
+        
+      
+    
+    
+
